@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft Fabric: Komponenten und Anwendungsfälle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+          <div class="flex space-x-7">
+            <div>
+              <img
+                src="https://www.microsoft.com/favicon.ico"
+                class="h-8 w-8"
+                alt="Microsoft"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hauptinhalt -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <!-- Überblicksabschnitt -->
+      <section class="mb-16">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">
+          Microsoft Fabric: Ein umfassender Leitfaden
+        </h1>
+        <p class="text-lg text-gray-600">
+          Microsoft Fabric ist eine Sammlung von Cloud-basierten Diensten, die
+          Unternehmen dabei unterstützen, Daten im großen Maßstab zu verwalten
+          und zu analysieren. Es bietet eine komplette Datenlösung von der
+          Datenerfassung bis zur Transformation, Speicherung und Analyse.
+        </p>
+      </section>
+
+      <!-- Komponentenabschnitt -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+          Hauptkomponenten von Microsoft Fabric
+        </h2>
+
+        <!-- Azure Data Factory -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-industry text-blue-500 text-2xl mr-3"></i>
+            <h3 class="text-xl font-semibold">Azure Data Factory</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Azure Data Factory ist ein Cloud-basiertes Data-Integration-Dienst
+            von Microsoft. Mit ihm können Sie Datenpipelines erstellen, planen
+            und verwalten – über verschiedene Quellen und Ziele hinweg.
+          </p>
+
+          <!-- ETL vs ELT -->
+          <div class="bg-gray-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2">ETL vs ELT</h4>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <h5 class="font-medium text-blue-600">
+                  ETL (Extract, Transform, Load)
+                </h5>
+                <p class="text-sm text-gray-600">
+                  Daten werden aus Quellen extrahiert, transformiert und dann in
+                  ein Ziel (meist ein Data Warehouse) geladen.
+                </p>
+              </div>
+              <div>
+                <h5 class="font-medium text-green-600">
+                  ELT (Extract, Load, Transform)
+                </h5>
+                <p class="text-sm text-gray-600">
+                  Daten werden extrahiert und in ein Ziel (meist ein Data Lake)
+                  geladen, bevor sie transformiert werden.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- OnPrem zu Cloud -->
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">On-Premises-Daten in die Cloud</h4>
+            <p class="text-sm text-gray-600">
+              Azure Data Factory unterstützt die Migration von Daten aus
+              Unternehmenssystemen in die Cloud, ermöglicht somit hybride
+              Data-Integration-Szenarien.
+            </p>
+          </div>
+        </div>
+
+        <!-- Azure Databricks -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-brain text-yellow-500 text-2xl mr-3"></i>
+            <h3 class="text-xl font-semibold">Azure Databricks</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Azure Databricks ist eine schnelle, einfache und kollaborative
+            Analyseplattform auf Basis von Apache Spark. Ideal für die Arbeit
+            mit unstrukturierten und strukturierten Daten in Data Lakes.
+          </p>
+
+          <!-- Funktionen -->
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">Schlüsselmerkmale</h4>
+            <ul class="list-disc list-inside text-sm text-gray-600">
+              <li>Apache Spark-Notebooks</li>
+              <li>Kollaborative Arbeitsbereiche</li>
+              <li>Integration von Machine Learning</li>
+              <li>Echtzeit-Analytics</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Azure Synapse Analytics -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-chart-line text-purple-500 text-2xl mr-3"></i>
+            <h3 class="text-xl font-semibold">Azure Synapse Analytics</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Azure Synapse Analytics (früher Azure SQL Data Warehouse) ist ein
+            unbeschränkter Analytics-Dienst, der
+            Unternehmens-Datenwarehouse-Fähigkeiten in die Cloud bringt.
+          </p>
+
+          <!-- Funktionen -->
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">Schlüsselmerkmale</h4>
+            <ul class="list-disc list-inside text-sm text-gray-600">
+              <li>Massenparallelverarbeitung (MPP)</li>
+              <li>Columnstore-Technologie</li>
+              <li>Integration mit Power BI</li>
+              <li>Unterstützung für T-SQL</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Azure Data Lake Gen2 -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-database text-blue-400 text-2xl mr-3"></i>
+            <h3 class="text-xl font-semibold">Azure Data Lake Storage Gen2</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Azure Data Lake Storage Gen2 ist eine modernste Data-Lake-Lösung für
+            Big-Data-Analytics. Es bietet ein Repository für alle Arten von
+            Daten (strukturiert, halbstrukturiert und unstrukturiert) im nativen
+            Format.
+          </p>
+
+          <!-- Vergleich mit Blob Storage -->
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">
+              Data Lake Gen2 im Vergleich zu Blob Storage
+            </h4>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <h5 class="font-medium text-blue-600">Data Lake Gen2</h5>
+                <p class="text-sm text-gray-600">
+                  Optimiert für Big-Data-Analytics mit Funktionen wie
+                  hierarchischen Namespaces, ACLs und hochleistungsfähigem
+                  Zugriff.
+                </p>
+              </div>
+              <div>
+                <h5 class="font-medium text-green-600">Blob Storage</h5>
+                <p class="text-sm text-gray-600">
+                  Allgemeiner Objektspeicher für alle Arten von Daten, optimiert
+                  für hohe Kapazität und Langlebigkeit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Power BI Abschnitt -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-chart-pie text-red-500 text-2xl mr-3"></i>
+            <h3 class="text-xl font-semibold">Power BI</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Power BI ist ein Business-Analytics-Dienst von Microsoft, der es
+            Benutzern ermöglicht, Daten zu analysieren, visualisieren und in
+            Berichten und Dashboards zu teilen.
+          </p>
+          <p class="text-gray-600">
+            Power BI dient als Endprodukt der Datenpipeline, um die analysierten
+            Daten in einem benutzerfreundlichen Format darzustellen. Beispiele
+            sind:
+          </p>
+          <ul class="list-disc list-inside text-sm text-gray-600 mt-2">
+            <li>Dashboard für verkaufliche KPIs</li>
+            <li>Berichte über Kundenverhaltensanalysen</li>
+            <li>Visualisierung von Produktionsleistung in Echtzeit</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Anwendungsfälle -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+          Praktische Anwendungsfälle
+        </h2>
+
+        <!-- Anwendungsfall 1 -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h3 class="text-xl font-semibold mb-4">
+            Anwendungsfall 1: SmartFactory GmbH - Predictive Maintenance
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Die Firma SmartFactory GmbH, ein Hersteller von industriellen
+            Maschinen, möchte vorbeugende Wartung durchführen, um Stillstände zu
+            vermeiden. Sie erfassen Sensordaten (Temperatur, Vibrationen, Druck)
+            von ihren Maschinen in CSV-Dateien. Diese Daten werden über Azure
+            Data Factory in die Cloud übertragen, in Azure Databricks
+            verarbeitet und analysiert, um Vorhersagen über den Maschinenzustand
+            zu treffen. Die Ergebnisse werden in Power BI visualisiert, um den
+            Wartungsteams Echtzeit-Einblicke zu geben.
+          </p>
+        </div>
+
+        <!-- Anwendungsfall 2 -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h3 class="text-xl font-semibold mb-4">
+            Anwendungsfall 2: GreenEnergy AG - Energieverbrauchsanalyse
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Die GreenEnergy AG, ein Energieversorger, möchte den
+            Energieverbrauch ihrer Kunden analysieren, um personalisierte Tarife
+            anzubieten. Sie verwenden Azure Data Factory, um Verbrauchsdaten aus
+            Smart Metern (JSON-Format) in Azure Data Lake Storage Gen2 zu
+            importieren. Die Daten werden in Azure Databricks mithilfe von
+            Apache Spark verarbeitet und analysiert, um Verbrauchsmuster zu
+            erkennen. Die Ergebnisse werden in Azure Synapse Analytics
+            gespeichert und über Power BI-Berichte an die Kunden kommuniziert.
+          </p>
+        </div>
+
+        <!-- Anwendungsfall 3 -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h3 class="text-xl font-semibold mb-4">
+            Anwendungsfall 3: RetailCompany - Kundenzentrische
+            Marketingkampagnen
+          </h3>
+          <p class="text-gray-600 mb-4">
+            RetailCompany, ein Einzelhändler, möchte seine Marketingkampagnen
+            optimieren, indem es Kundenverhaltensdaten analysiert. Transaktionen
+            werden in einer relationalen Datenbank gespeichert und über Azure
+            Data Factory in Azure Synapse Analytics geladen. In Synapse werden
+            die Daten mit weiteren Kundeninformationen aus dem CRM-System
+            verknüpft. Die analysierten Daten werden in Power BI genutzt, um
+            Zielgruppen zu identifizieren und personalisierte Angebote zu
+            erstellen.
+          </p>
+        </div>
+
+        <!-- Anwendungsfall 4 -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-semibold mb-4">
+            Anwendungsfall 4: Logistik AG - Lieferkettenoptimierung
+          </h3>
+          <p class="text-gray-600">
+            Die Logistik AG möchte ihre Lieferketten optimieren, indem sie
+            Telematikdaten von LKWs erfasst. Die Daten (GPS-Koordinaten,
+            Kraftstoffverbrauch, Temperatur) werden in Azure Data Factory
+            importiert und in Azure Data Lake Storage Gen2 gespeichert. In Azure
+            Databricks werden die Daten mithilfe von
+            Machine-Learning-Algorithmen analysiert, um die effizientesten
+            Routen zu berechnen und Treibstoffkosten zu senken. Die Ergebnisse
+            werden in Azure Synapse Analytics gespeichert und über Power BI an
+            die Logistikteams weitergegeben.
+          </p>
+        </div>
+      </section>
+
+      <!-- Fazit -->
+      <section>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          Loslegen mit Microsoft Fabric
+        </h2>
+        <p class="text-lg text-gray-600">
+          Microsoft Fabric bietet umfassende Tools für die moderne
+          Datenverwaltung und -analyse. Ob strukturierte oder unstrukturierte
+          Daten – Microsoft Fabric bietet Lösungen, die es Ihrem Unternehmen
+          ermöglichen, wertvolle Erkenntnisse zu gewinnen und datengetriebene
+          Entscheidungen zu treffen.
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+          <p class="text-center text-sm">
+            Christian Schneidewind - Solution Area Spezialist - Email:
+            v-cschneidew@microsoft.com
+          </p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
