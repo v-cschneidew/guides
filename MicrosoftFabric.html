@@ -5,12 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Microsoft Fabric: Komponenten und Anwendungsfälle</title>
     <script src="https://cdn.tailwindcss.com"></script>
+       <!-- Add Alpine.js for interactive elements -->
+       <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+       <!-- Add AOS for scroll animations -->
+       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
   </head>
   <body class="bg-gray-100">
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add expand/collapse functionality
+        document.querySelectorAll('.expandable').forEach(button => {
+          button.addEventListener('click', function() {
+            const parent = this.closest('.bg-white.rounded-lg.shadow-md');
+            parent.classList.toggle('expanded');
+            
+            // Add smooth transition
+            parent.style.transition = 'all 0.3s ease';
+            
+            // Toggle content visibility
+            const content = parent.querySelector('.content');
+            content.classList.toggle('hidden');
+          });
+        });
+
+        // Initialize AOS for scroll animations
+        AOS.init({
+          once: true,
+          duration: 1000
+        });
+      });
+    </script>
     <!-- Navigation -->
     <nav class="bg-white shadow-lg">
       <div class="max-w-6xl mx-auto px-4">
@@ -48,99 +77,193 @@
    <h2 class="text-2xl font-bold text-gray-800 mb-6">
           Hauptkomponenten von Microsoft Fabric
         </h2>
-        <!-- Azure Data Factory -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-industry text-blue-500 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">Azure Data Factory</h3>
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6 transform transition-all duration-300 hover:shadow-lg" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <i class="fas fa-industry text-blue-500 text-2xl mr-3"></i>
+              <h3 class="text-xl font-semibold">Azure Data Factory (ADF)</h3>
+            </div>
+            <button class="expandable text-gray-500 hover:text-blue-500">
+              <i class="fas fa-chevron-down"></i>
+            </button>
           </div>
-          <p class="text-gray-600 mb-4">
-            Azure Data Factory ist ein Cloud-basiertes Data-Integration-Dienst
-            von Microsoft. Mit ihm können Sie Datenpipelines erstellen, planen
-            und verwalten – über verschiedene Quellen und Ziele hinweg.
-          </p>
-
-          <!-- ETL vs ELT -->
-          <div class="bg-gray-50 p-4 rounded-lg mb-4">
-            <h4 class="font-semibold mb-2">ETL vs ELT</h4>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h5 class="font-medium text-blue-600">
-                  ETL (Extract, Transform, Load)
-                </h5>
-                <p class="text-sm text-gray-600">
-                  Daten werden aus Quellen extrahiert, transformiert und dann in
-                  ein Ziel (meist ein Data Warehouse) geladen.
-                </p>
+          <div class="content mt-4">
+            <p class="text-gray-600 mb-4">
+              Azure Data Factory ist ein Cloud-basierter Data-Integration-Dienst von Microsoft. Mit ihm können Sie Datenpipelines erstellen, planen und verwalten – über verschiedene Quellen und Ziele hinweg.
+            </p>
+            
+            <!-- ETL vs ELT -->
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+              <h4 class="font-semibold mb-2">ETL vs ELT</h4>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h5 class="font-medium text-blue-600">
+                    ETL (Extract, Transform, Load)
+                  </h5>
+                  <p class="text-sm text-gray-600">
+                    Daten werden aus Quellen extrahiert, transformiert und dann in ein Ziel (meist ein Data Warehouse) geladen.
+                  </p>
+                </div>
+                <div>
+                  <h5 class="font-medium text-green-600">
+                    ELT (Extract, Load, Transform)
+                  </h5>
+                  <p class="text-sm text-gray-600">
+                    Daten werden extrahiert und in ein Ziel (meist ein Data Lake) geladen, bevor sie transformiert werden.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h5 class="font-medium text-green-600">
-                  ELT (Extract, Load, Transform)
-                </h5>
-                <p class="text-sm text-gray-600">
-                  Daten werden extrahiert und in ein Ziel (meist ein Data Lake)
-                  geladen, bevor sie transformiert werden.
-                </p>
+            </div>
+        
+            <!-- OnPrem zu Cloud -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="font-semibold mb-2">On-Premises-Daten in die Cloud</h4>
+              <p class="text-sm text-gray-600">
+                Azure Data Factory unterstützt die Migration von Daten aus Unternehmenssystemen in die Cloud, ermöglicht somit hybride Data-Integration-Szenarien.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6 transform transition-all duration-300 hover:shadow-lg" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <i class="fas fa-brain text-yellow-500 text-2xl mr-3"></i>
+              <h3 class="text-xl font-semibold">Azure Databricks</h3>
+            </div>
+            <button class="expandable text-gray-500 hover:text-yellow-500">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          <div class="content mt-4">
+            <p class="text-gray-600 mb-4">
+              Die kollaborative Analyseplattform für Data Science, Machine Learning und Echtzeit-Analytics. Basierend auf Apache Spark, ideal für moderne Datenanalysen.
+            </p>
+        
+            <div class="space-y-4">
+              <!-- Notebooks -->
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <div class="flex items-center mb-2">
+                  <i class="fas fa-code text-blue-600 text-xl mr-2"></i>
+                  <h4 class="font-semibold text-blue-700">Notebooks</h4>
+                </div>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                  <li>Unterstützung für Python, R, Scala und SQL</li>
+                  <li>Echtzeit-Zusammenarbeit</li>
+                  <li>Intuitive Code- und Visualisierungsumgebung</li>
+                </ul>
+              </div>
+        
+              <!-- Machine Learning -->
+              <div class="bg-green-50 p-4 rounded-lg">
+                <div class="flex items-center mb-2">
+                  <i class="fas fa-robot text-green-600 text-xl mr-2"></i>
+                  <h4 class="font-semibold text-green-700">Machine Learning</h4>
+                </div>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                  <li>Integration von MLflow</li>
+                  <li>Automatisierte ML-Workflows</li>
+                  <li>Model-Management und -Bereitstellung</li>
+                </ul>
+              </div>
+        
+              <!-- Echtzeit-Analytics -->
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <div class="flex items-center mb-2">
+                  <i class="fas fa-bolt text-purple-600 text-xl mr-2"></i>
+                  <h4 class="font-semibold text-purple-700">Echtzeit-Analytics</h4>
+                </div>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                  <li>Streaming Data Processing</li>
+                  <li>Schnelle Datentransformation</li>
+                  <li>Nahtlose Integration mit Azure Event Hubs</li>
+                </ul>
+              </div>
+        
+              <!-- Sicherheit -->
+              <div class="bg-red-50 p-4 rounded-lg">
+                <div class="flex items-center mb-2">
+                  <i class="fas fa-shield-alt text-red-600 text-xl mr-2"></i>
+                  <h4 class="font-semibold text-red-700">Sicherheit</h4>
+                </div>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                  <li>Granulare Zugriffskontrolle</li>
+                  <li>Automatische Verschlüsselung</li>
+                  <li>Integration mit Azure Active Directory</li>
+                </ul>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- OnPrem zu Cloud -->
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2">On-Premises-Daten in die Cloud</h4>
-            <p class="text-sm text-gray-600">
-              Azure Data Factory unterstützt die Migration von Daten aus
-              Unternehmenssystemen in die Cloud, ermöglicht somit hybride
-              Data-Integration-Szenarien.
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6 transform transition-all duration-300 hover:shadow-lg" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <i class="fas fa-chart-line text-purple-500 text-2xl mr-3"></i>
+              <h3 class="text-xl font-semibold">Azure Synapse Analytics</h3>
+            </div>
+            <button class="expandable text-gray-500 hover:text-purple-500">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          <div class="content mt-4">
+            <p class="text-gray-600 mb-4">
+              Der unbeschränkte Analytics-Dienst, der Unternehmens-Datenwarehouse-Fähigkeiten in die Cloud bringt. Ideal für umfangreiche Datenanalysen und Berichterstellung.
             </p>
-          </div>
-        </div>
-
-        <!-- Azure Databricks -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-brain text-yellow-500 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">Azure Databricks</h3>
-          </div>
-          <p class="text-gray-600 mb-4">
-            Azure Databricks ist eine schnelle, einfache und kollaborative
-            Analyseplattform auf Basis von Apache Spark. Ideal für die Arbeit
-            mit unstrukturierten und strukturierten Daten in Data Lakes.
-          </p>
-
-          <!-- Funktionen -->
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2">Schlüsselmerkmale</h4>
-            <ul class="list-disc list-inside text-sm text-gray-600">
-              <li>Apache Spark-Notebooks</li>
-              <li>Kollaborative Arbeitsbereiche</li>
-              <li>Integration von Machine Learning</li>
-              <li>Echtzeit-Analytics</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Azure Synapse Analytics -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-chart-line text-purple-500 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">Azure Synapse Analytics</h3>
-          </div>
-          <p class="text-gray-600 mb-4">
-            Azure Synapse Analytics (früher Azure SQL Data Warehouse) ist ein
-            unbeschränkter Analytics-Dienst, der
-            Unternehmens-Datenwarehouse-Fähigkeiten in die Cloud bringt.
-          </p>
-
-          <!-- Funktionen -->
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2">Schlüsselmerkmale</h4>
-            <ul class="list-disc list-inside text-sm text-gray-600">
-              <li>Massenparallelverarbeitung (MPP)</li>
-              <li>Columnstore-Technologie</li>
-              <li>Integration mit Power BI</li>
-              <li>Unterstützung für T-SQL</li>
-            </ul>
+        
+            <div class="space-y-4">
+              <!-- Massenparallelverarbeitung -->
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <div class="flex items-center mb-2">
+                  <i class="fas fa-tachometer-alt text-blue-600 text-xl mr-2"></i>
+                  <h4 class="font-semibold text-blue-700">Massenparallelverarbeitung (MPP)</h4>
+                </div>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                  <li>Schnelle Verarbeitung großer Datensätze</li>
+                  <li>Skalierbare Architektur</li>
+                  <li>Optimiert für komplexe Abfragen</li>
+                </ul>
+              </div>
+        
+              <!-- Columnstore-Technologie -->
+              <div class="bg-green-50 p-4 rounded-lg">
+                <div class="flex items-center mb-2">
+                  <i class="fas fa-database text-green-600 text-xl mr-2"></i>
+                  <h4 class="font-semibold text-green-700">Columnstore-Technologie</h4>
+                </div>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                  <li>Bessere Komprimierung und Speicherung</li>
+                  <li>Verbesserte Query-Performance</li>
+                  <li>Optimiert für Analytics-Szenarien</li>
+                </ul>
+              </div>
+        
+              <!-- Integration mit Power BI -->
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <div class="flex items-center mb-2">
+                  <i class="fas fa-chart-pie text-purple-600 text-xl mr-2"></i>
+                  <h4 class="font-semibold text-purple-700">Integration mit Power BI</h4>
+                </div>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                  <li>Nahtlose Verbindung zu Power BI</li>
+                  <li>Echtzeit-Daten teilen und analysieren</li>
+                  <li>Interaktive Berichte erstellen</li>
+                </ul>
+              </div>
+        
+              <!-- T-SQL-Unterstützung -->
+              <div class="bg-yellow-50 p-4 rounded-lg">
+                <div class="flex items-center mb-2">
+                  <i class="fas fa-code text-yellow-600 text-xl mr-2"></i>
+                  <h4 class="font-semibold text-yellow-700">T-SQL-Unterstützung</h4>
+                </div>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                  <li>Vertraute SQL-Syntax</li>
+                  <li>Erweiterte Abfragefunktionen</li>
+                  <li>Kompatibilität mit bestehenden Workloads</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -151,168 +274,167 @@
           </h2>
 
     <!-- Azure Blob Storage -->
-    <div class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex items-center mb-4">
-        <i class="fas fa-archive text-blue-500 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Azure Blob Storage</h3>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <p class="text-gray-600 mb-4">
-            Der grundlegende Objektspeicher für unstrukturierte Daten. 
-            Ideal für Dateiablage, Backup-Lösungen und statische Webinhalte.
-          </p>
-          <div class="bg-green-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Kostengünstige Archivierung</li>
-              <li>Unbegrenzte Skalierung</li>
-              <li>Multi-Protocol Zugriff</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <div class="bg-red-50 p-4 rounded-lg mb-4">
-            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Kein hierarchischer Namespace</li>
-              <li>Nicht für Analytics optimiert</li>
-            </ul>
-          </div>
-          <div class="bg-purple-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Medienspeicherung (Bilder, Videos)</li>
-              <li>Logfile-Archivierung</li>
-              <li>Statische Website-Hosting</li>
-            </ul>
-          </div>
-        </div>
+<div class="bg-white rounded-lg shadow-md p-6">
+  <div class="flex items-center mb-4">
+    <i class="fas fa-archive text-blue-500 text-2xl mr-3"></i>
+    <h3 class="text-xl font-semibold">Azure Blob Storage</h3>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div>
+      <p class="text-gray-600 mb-4">
+        Der grundlegende Objektspeicher für unstrukturierte Daten. 
+        Ideal für Dateiablage, Backup-Lösungen und statische Webinhalte.
+      </p>
+      <div class="bg-purple-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Medienspeicherung (Bilder, Videos)</li>
+          <li>Logfile-Archivierung</li>
+          <li>Statische Website-Hosting</li>
+        </ul>
       </div>
     </div>
-
-    <!-- Azure Data Lake Gen1 -->
-    <div class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex items-center mb-4">
-        <i class="fas fa-database text-orange-500 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Azure Data Lake Storage Gen1</h3>
+    <div class="flex flex-col">
+      <div class="bg-green-50 p-4 rounded-lg mb-4">
+        <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Kostengünstige Archivierung</li>
+          <li>Unbegrenzte Skalierung</li>
+          <li>Multi-Protocol Zugriff</li>
+        </ul>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <p class="text-gray-600 mb-4">
-            Die erste Generation des Analytics-fokussierten Data Lakes. 
-            Wird durch Gen2 ersetzt, aber noch in Legacy-Systemen vorhanden.
-          </p>
-          <div class="bg-green-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Hadoop-kompatibel</li>
-              <li>Unbegrenzte Datengröße</li>
-              <li>Enterprise Security</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <div class="bg-red-50 p-4 rounded-lg mb-4">
-            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Keine Weiterentwicklung</li>
-              <li>Getrennt von Blob Storage</li>
-            </ul>
-          </div>
-          <div class="bg-purple-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Legacy Hadoop Workloads</li>
-              <li>Bestehende Gen1-Implementierungen</li>
-            </ul>
-          </div>
-        </div>
+      <div class="bg-red-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Kein hierarchischer Namespace</li>
+          <li>Nicht für Analytics optimiert</li>
+        </ul>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Azure Data Lake Gen2 -->
-    <div class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex items-center mb-4">
-        <i class="fas fa-water text-blue-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Azure Data Lake Storage Gen2</h3>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <p class="text-gray-600 mb-4">
-            Kombiniert Blob Storage mit Data Lake-Funktionen. 
-            Industriestandard für moderne Analytics-Architekturen.
-          </p>
-          <div class="bg-green-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Höchste Performance</li>
-              <li>POSIX-kompatible ACLs</li>
-              <li>Nahtlose Azure-Integration</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <div class="bg-red-50 p-4 rounded-lg mb-4">
-            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Komplexes Berechtigungsmanagement</li>
-              <li>Reine Azure-Lösung</li>
-            </ul>
-          </div>
-          <div class="bg-purple-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Big Data Analytics</li>
-              <li>Machine Learning Pipelines</li>
-              <li>Data Science Projekte</li>
-            </ul>
-          </div>
-        </div>
+<!-- Azure Data Lake Storage Gen2 -->
+<div class="bg-white rounded-lg shadow-md p-6">
+  <div class="flex items-center mb-4">
+    <i class="fas fa-water text-blue-400 text-2xl mr-3"></i>
+    <h3 class="text-xl font-semibold">Azure Data Lake Storage Gen2</h3>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div>
+      <p class="text-gray-600 mb-4">
+        Kombiniert Blob Storage mit Data Lake-Funktionen. 
+        Industriestandard für moderne Analytics-Architekturen.
+      </p>
+      <div class="bg-purple-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Big Data Analytics</li>
+          <li>Machine Learning Pipelines</li>
+          <li>Data Science Projekte</li>
+        </ul>
       </div>
     </div>
-
-    <!-- Microsoft OneLake -->
-    <div class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex items-center mb-4">
-        <i class="fas fa-clouds text-teal-500 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Microsoft OneLake</h3>
+    <div class="flex flex-col">
+      <div class="bg-green-50 p-4 rounded-lg mb-4">
+        <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Höchste Performance</li>
+          <li>POSIX-kompatible ACLs</li>
+          <li>Nahtlose Azure-Integration</li>
+        </ul>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <p class="text-gray-600 mb-4">
-            Der zentrale Data Lake für Microsoft Fabric. 
-            Bietet eine vereinheitlichte Datenebene über alle Fabric-Komponenten.
-          </p>
-          <div class="bg-green-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>Automatische Fabric-Integration</li>
-              <li>Multi-Cloud Support</li>
-              <li>Einheitliche Governance</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <div class="bg-red-50 p-4 rounded-lg mb-4">
-            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>An Fabric gebunden</li>
-              <li>Eingeschränkte Customization</li>
-            </ul>
-          </div>
-          <div class="bg-purple-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
-            <ul class="list-disc list-inside text-sm">
-              <li>End-to-End Fabric Lösungen</li>
-              <li>Unified Data Governance</li>
-              <li>Cross-Cloud Analytics</li>
-            </ul>
-          </div>
-        </div>
+      <div class="bg-red-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Komplexes Berechtigungsmanagement</li>
+          <li>Reine Azure-Lösung</li>
+        </ul>
       </div>
     </div>
+  </div>
+</div>
 
+<!-- Microsoft OneLake -->
+<div class="bg-white rounded-lg shadow-md p-6">
+  <div class="flex items-center mb-4">
+    <i class="fas fa-clouds text-teal-500 text-2xl mr-3"></i>
+    <h3 class="text-xl font-semibold">Microsoft OneLake</h3>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div>
+      <p class="text-gray-600 mb-4">
+        Der zentrale Data Lake für Microsoft Fabric. 
+        Bietet eine vereinheitlichte Datenebene über alle Fabric-Komponenten.
+      </p>
+      <div class="bg-purple-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>End-to-End Fabric Lösungen</li>
+          <li>Unified Data Governance</li>
+          <li>Cross-Cloud Analytics</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="bg-green-50 p-4 rounded-lg mb-4">
+        <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Automatische Fabric-Integration</li>
+          <li>Multi-Cloud Support</li>
+          <li>Einheitliche Governance</li>
+        </ul>
+      </div>
+      <div class="bg-red-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>An Fabric gebunden</li>
+          <li>Eingeschränkte Customization</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Azure Data Lake Storage Gen1 -->
+<div class="bg-white rounded-lg shadow-md p-6">
+  <div class="flex items-center mb-4">
+    <i class="fas fa-database text-orange-500 text-2xl mr-3"></i>
+    <h3 class="text-xl font-semibold">Azure Data Lake Storage Gen1</h3>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div>
+      <p class="text-gray-600 mb-4">
+        Die erste Generation des Analytics-fokussierten Data Lakes. 
+        Wird durch Gen2 ersetzt, aber noch in Legacy-Systemen vorhanden.
+      </p>
+      <div class="bg-purple-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Legacy Hadoop Workloads</li>
+          <li>Bestehende Gen1-Implementierungen</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="bg-green-50 p-4 rounded-lg mb-4">
+        <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Hadoop-kompatibel</li>
+          <li>Unbegrenzte Datengröße</li>
+          <li>Enterprise Security</li>
+        </ul>
+      </div>
+      <div class="bg-red-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+        <ul class="list-disc list-inside text-sm">
+          <li>Keine Weiterentwicklung</li>
+          <li>Getrennt von Blob Storage</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 
   <!-- Comparison Summary -->
@@ -362,7 +484,7 @@
             sind:
           </p>
           <ul class="list-disc list-inside text-sm text-gray-600 mt-2">
-            <li>Dashboard für verkaufliche KPIs</li>
+            <li>Dashboard für vertriebliche KPIs</li>
             <li>Berichte über Kundenverhaltensanalysen</li>
             <li>Visualisierung von Produktionsleistung in Echtzeit</li>
           </ul>
