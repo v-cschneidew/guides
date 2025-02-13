@@ -45,10 +45,9 @@
 
       <!-- Komponentenabschnitt -->
       <section class="mb-16">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+   <h2 class="text-2xl font-bold text-gray-800 mb-6">
           Hauptkomponenten von Microsoft Fabric
         </h2>
-
         <!-- Azure Data Factory -->
         <div class="bg-white rounded-lg shadow-md p-6 mb-6">
           <div class="flex items-center mb-4">
@@ -145,43 +144,206 @@
           </div>
         </div>
 
-        <!-- Azure Data Lake Gen2 -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-database text-blue-400 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">Azure Data Lake Storage Gen2</h3>
-          </div>
-          <p class="text-gray-600 mb-4">
-            Azure Data Lake Storage Gen2 ist eine modernste Data-Lake-Lösung für
-            Big-Data-Analytics. Es bietet ein Repository für alle Arten von
-            Daten (strukturiert, halbstrukturiert und unstrukturiert) im nativen
-            Format.
-          </p>
+  <!-- Storage Services Container -->
+  <div class="space-y-6">
+       <h2 class="text-2xl font-bold text-gray-800 mb-6">
+            Speicherlösungen im Vergleich
+          </h2>
 
-          <!-- Vergleich mit Blob Storage -->
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-semibold mb-2">
-              Data Lake Gen2 im Vergleich zu Blob Storage
-            </h4>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h5 class="font-medium text-blue-600">Data Lake Gen2</h5>
-                <p class="text-sm text-gray-600">
-                  Optimiert für Big-Data-Analytics mit Funktionen wie
-                  hierarchischen Namespaces, ACLs und hochleistungsfähigem
-                  Zugriff.
-                </p>
-              </div>
-              <div>
-                <h5 class="font-medium text-green-600">Blob Storage</h5>
-                <p class="text-sm text-gray-600">
-                  Allgemeiner Objektspeicher für alle Arten von Daten, optimiert
-                  für hohe Kapazität und Langlebigkeit.
-                </p>
-              </div>
-            </div>
+    <!-- Azure Blob Storage -->
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <div class="flex items-center mb-4">
+        <i class="fas fa-archive text-blue-500 text-2xl mr-3"></i>
+        <h3 class="text-xl font-semibold">Azure Blob Storage</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <p class="text-gray-600 mb-4">
+            Der grundlegende Objektspeicher für unstrukturierte Daten. 
+            Ideal für Dateiablage, Backup-Lösungen und statische Webinhalte.
+          </p>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Kostengünstige Archivierung</li>
+              <li>Unbegrenzte Skalierung</li>
+              <li>Multi-Protocol Zugriff</li>
+            </ul>
           </div>
         </div>
+        <div>
+          <div class="bg-red-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Kein hierarchischer Namespace</li>
+              <li>Nicht für Analytics optimiert</li>
+            </ul>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Medienspeicherung (Bilder, Videos)</li>
+              <li>Logfile-Archivierung</li>
+              <li>Statische Website-Hosting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Azure Data Lake Gen1 -->
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <div class="flex items-center mb-4">
+        <i class="fas fa-database text-orange-500 text-2xl mr-3"></i>
+        <h3 class="text-xl font-semibold">Azure Data Lake Storage Gen1</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <p class="text-gray-600 mb-4">
+            Die erste Generation des Analytics-fokussierten Data Lakes. 
+            Wird durch Gen2 ersetzt, aber noch in Legacy-Systemen vorhanden.
+          </p>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Hadoop-kompatibel</li>
+              <li>Unbegrenzte Datengröße</li>
+              <li>Enterprise Security</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="bg-red-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Keine Weiterentwicklung</li>
+              <li>Getrennt von Blob Storage</li>
+            </ul>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Legacy Hadoop Workloads</li>
+              <li>Bestehende Gen1-Implementierungen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Azure Data Lake Gen2 -->
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <div class="flex items-center mb-4">
+        <i class="fas fa-water text-blue-400 text-2xl mr-3"></i>
+        <h3 class="text-xl font-semibold">Azure Data Lake Storage Gen2</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <p class="text-gray-600 mb-4">
+            Kombiniert Blob Storage mit Data Lake-Funktionen. 
+            Industriestandard für moderne Analytics-Architekturen.
+          </p>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Höchste Performance</li>
+              <li>POSIX-kompatible ACLs</li>
+              <li>Nahtlose Azure-Integration</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="bg-red-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Komplexes Berechtigungsmanagement</li>
+              <li>Reine Azure-Lösung</li>
+            </ul>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Big Data Analytics</li>
+              <li>Machine Learning Pipelines</li>
+              <li>Data Science Projekte</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Microsoft OneLake -->
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <div class="flex items-center mb-4">
+        <i class="fas fa-clouds text-teal-500 text-2xl mr-3"></i>
+        <h3 class="text-xl font-semibold">Microsoft OneLake</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <p class="text-gray-600 mb-4">
+            Der zentrale Data Lake für Microsoft Fabric. 
+            Bietet eine vereinheitlichte Datenebene über alle Fabric-Komponenten.
+          </p>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Automatische Fabric-Integration</li>
+              <li>Multi-Cloud Support</li>
+              <li>Einheitliche Governance</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="bg-red-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>An Fabric gebunden</li>
+              <li>Eingeschränkte Customization</li>
+            </ul>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>End-to-End Fabric Lösungen</li>
+              <li>Unified Data Governance</li>
+              <li>Cross-Cloud Analytics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Comparison Summary -->
+  <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+    <h3 class="text-xl font-semibold mb-4">Auswahlhilfe</h3>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
+      <div class="text-center p-4 border-r">
+        <i class="fas fa-archive text-blue-500 text-2xl mb-2"></i>
+        <p class="font-semibold">Blob Storage</p>
+        <p class="text-gray-600 mt-2">Wenn Sie einfache Objektspeicherung ohne Analytics-Anforderungen benötigen</p>
+      </div>
+      <div class="text-center p-4 border-r">
+        <i class="fas fa-water text-blue-400 text-2xl mb-2"></i>
+        <p class="font-semibold">Data Lake Gen2</p>
+        <p class="text-gray-600 mt-2">Für moderne Analytics-Workloads in der Azure-Cloud</p>
+      </div>
+      <div class="text-center p-4 border-r">
+        <i class="fas fa-clouds text-teal-500 text-2xl mb-2"></i>
+        <p class="font-semibold">OneLake</p>
+        <p class="text-gray-600 mt-2">Bei Nutzung von Microsoft Fabric mit Multi-Cloud-Ansatz</p>
+      </div>
+      <div class="text-center p-4">
+        <i class="fas fa-database text-orange-500 text-2xl mb-2"></i>
+        <p class="font-semibold">Data Lake Gen1</p>
+        <p class="text-gray-600 mt-2">Nur für Legacy-Systeme - Migration zu Gen2 empfohlen</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
         <!-- Power BI Abschnitt -->
         <div class="bg-white rounded-lg shadow-md p-6 mb-6">
