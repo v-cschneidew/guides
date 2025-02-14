@@ -115,12 +115,19 @@
               </div>
             </div>
         
-            <!-- OnPrem zu Cloud -->
             <div class="bg-gray-50 p-4 rounded-lg">
               <h4 class="font-semibold mb-2">On-Premises-Daten in die Cloud</h4>
               <p class="text-sm text-gray-600">
                 Azure Data Factory unterstützt die Migration von Daten aus Unternehmenssystemen in die Cloud, ermöglicht somit hybride Data-Integration-Szenarien.
               </p>
+              <ul class="list-disc list-inside text-sm text-gray-600">
+                <li>ServiceNow Connector</li>
+                <li>PostgreSQL Connector</li>
+                <li>Google BigQuery Connector</li>
+                <li>Snowflake Connector</li>
+                <li>Salesforce Connector</li>
+                <li>Google Ads Connector</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -566,6 +573,758 @@
             die Logistikteams weitergegeben.
           </p>
         </div>
+      </section>
+
+      <!-- Fazit -->
+      <section>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          Loslegen mit Microsoft Fabric
+        </h2>
+        <p class="text-lg text-gray-600">
+          Microsoft Fabric bietet umfassende Tools für die moderne
+          Datenverwaltung und -analyse. Ob strukturierte oder unstrukturierte
+          Daten – Microsoft Fabric bietet Lösungen, die es Ihrem Unternehmen
+          ermöglichen, wertvolle Erkenntnisse zu gewinnen und datengetriebene
+          Entscheidungen zu treffen.
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+          <p class="text-center text-sm">
+            Christian Schneidewind - Solution Area Spezialist - Email:
+            v-cschneidew@microsoft.com
+          </p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html><!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft Fabric: Komponenten und Anwendungsfälle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+ [x-cloak] { display: none !important; }
+      .rotate-180 { transform: rotate(180deg); }
+      .transition-max-height { transition: max-height 0.3s ease-out; }
+      .category-border { border-left: 4px solid; }
+    </style>
+      
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+          <div class="flex space-x-7">
+            <div>
+              <img
+                src="https://www.microsoft.com/favicon.ico"
+                class="h-8 w-8"
+                alt="Microsoft"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hauptinhalt -->
+    <main class="max-w-6xl mx-auto px-4 py-8">      
+      
+      <!-- Überblicksabschnitt -->
+      <section class="mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Microsoft Fabric: Ein umfassender Leitfaden</h1>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Microsoft Fabric ist eine Sammlung von Cloud-basierten Diensten, die Unternehmen dabei unterstützen, Daten im großen Maßstab zu verwalten und zu analysieren. Es bietet eine komplette Datenlösung von der Datenerfassung bis zur Transformation, Speicherung und Analyse.
+        </p>
+      </section>
+      
+      <!-- Komponentenabschnitt -->
+      <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-8 pb-2">
+          Hauptkomponenten von Microsoft Fabric
+        </h2>
+       
+        <!-- Azure Data Factory Section -->
+<div x-data="{ isOpen: true }" class="bg-white rounded-lg shadow-sm mb-6 border border-gray-200" x-cloak>
+  <div class="flex items-center justify-between p-6 cursor-pointer" 
+       @click="isOpen = !isOpen"
+       role="button"
+       aria-expanded="true"
+       aria-controls="adf-content">
+    <div class="flex items-center">
+      <i class="fas fa-industry text-blue-600 text-2xl mr-3"></i>
+      <h3 class="text-xl font-semibold text-gray-800">Azure Data Factory (ADF)</h3>
+    </div>
+    <i class="fas fa-chevron-down text-gray-600 transition-transform duration-300" 
+       :class="{ 'rotate-180': isOpen }"></i>
+  </div>
+  <div id="adf-content" 
+       x-show="isOpen"
+       x-collapse
+       class="px-6 pb-6 pt-2 border-t border-gray-150">
+    
+    <p class="text-gray-700 mb-4">
+      Azure Data Factory ist Ihr "Daten-Fließband": Es holt Rohdaten von überall, verarbeitet sie und liefert sie an Ziele aus. So einfach funktioniert's:
+    </p>
+
+    <!-- Data Flow Abschnitte -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <!-- Data Source -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-blue-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">1. Daten-Quellen</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Datenbanken (SQL, Oracle)</li>
+          <li>Dateien (Excel, CSV, PDF)</li>
+          <li>Cloud-Speicher (Azure Blob)</li>
+          <li>Apps (Salesforce, Web-Tracking)</li>
+        </ul>
+      </div>
+
+      <!-- Filter -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-green-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">2. Filter &amp; Verarbeitung</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Duplikate entfernen</li>
+          <li>Daten zusammenführen</li>
+          <li>Formatieren/Umwandeln</li>
+          <li>Automatische Auslöser</li>
+        </ul>
+      </div>
+
+      <!-- Data Sink -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-purple-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">3. Daten-Ziele</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Power BI Dashboards</li>
+          <li>Data Warehouse</li>
+          <li>Cloud-Archive</li>
+          <li>Formate: CSV, JSON, Parquet</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Warum benötigt man das? -->
+    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+      <h4 class="font-semibold mb-2 text-gray-800">Warum ADF?</h4>
+      <div class="grid grid-cols-2 gap-4 text-gray-700">
+        <div>
+          <p class="text-sm"><span class="font-medium">⏱️ Automation:</span> Kein manuelles Kopieren</p>
+          <p class="text-sm"><span class="font-medium">📈 Skalierung:</span> 100 oder 1 Mio. Datensätze</p>
+        </div>
+        <div>
+          <p class="text-sm"><span class="font-medium">☁️ Hybrid:</span> Cloud + lokale Daten</p>
+          <p class="text-sm"><span class="font-medium">⚙️ Flexibilität:</span> Eigene Regeln definieren</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Praxisbeispiel -->
+    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+      <h4 class="font-semibold mb-2 text-gray-800">Praxisbeispiel: Einzelhändler</h4>
+      <p class="text-sm text-gray-600">
+        <span class="font-medium">Quellen:</span> Webshop (Online-Bestellungen) + Excel (Filialverkäufe)<br>
+        <span class="font-medium">Verarbeitung:</span> Testbestellungen filtern + Daten vereinheitlichen<br>
+        <span class="font-medium">Ziel:</span> Power BI Dashboard täglich um 8 Uhr aktualisiert
+      </p>
+    </div>
+  </div>
+</div>
+
+ <!-- Azure Databricks Section -->
+<div x-data="{ isOpen: true }" class="bg-white rounded-lg shadow-sm mb-6 border border-gray-200" x-cloak>
+  <div class="flex items-center justify-between p-6 cursor-pointer"
+       @click="isOpen = !isOpen"
+       role="button"
+       aria-expanded="false"
+       aria-controls="databricks-content">
+    <div class="flex items-center">
+      <i class="fas fa-brain text-purple-600 text-2xl mr-3"></i>
+      <h3 class="text-xl font-semibold text-gray-800">Azure Databricks</h3>
+    </div>
+    <i class="fas fa-chevron-down text-gray-600 transition-transform duration-300" 
+       :class="{ 'rotate-180': isOpen }"></i>
+  </div>
+  <div id="databricks-content" 
+       x-show="isOpen"
+       x-collapse
+       class="px-6 pb-6 pt-2 border-t border-gray-150">
+
+    <p class="text-gray-700 mb-4">
+      Stellen Sie sich Databricks als "Digitales Forschungslabor" vor: Hier experimentieren Daten-Teams gemeinsam mit riesigen Datenmengen, um Muster zu finden und Vorhersagen zu treffen.
+    </p>
+
+    <!-- Hauptfeatures -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      
+      <!-- Notebooks -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-blue-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">🏗️ Baukasten für Analysen</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Live-Zusammenarbeit wie bei Microsoft Excel</li>
+          <li>Unterstützt Python, SQL, R, Scala</li>
+          <li>Visualisierungen direkt im Code</li>
+          <li>Beispiel: Team analysiert gemeinsam Lieferketten-Probleme</li>
+        </ul>
+      </div>
+
+      <!-- Machine Learning -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-green-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">🤖 KI-Werkstatt</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Automatische Modell-Training</li>
+          <li>Vorhersagen direkt in Apps nutzbar</li>
+          <li>Versionierung von ML-Modellen</li>
+          <li>Beispiel: Lagerbestands-Prognose</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Echtzeit + Sicherheit -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      
+      <!-- Echtzeit -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-orange-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">⚡ Live-Datenströme</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Verarbeitung von IoT-Sensordaten</li>
+          <li>Social Media Monitoring</li>
+          <li>Frauderkennung in Echtzeit</li>
+          <li>Beispiel: Live-Auslastung von Ladesäulen</li>
+        </ul>
+      </div>
+
+      <!-- Sicherheit -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-red-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">🔒 Sicherheits-Features</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Rollenspezifischer Zugriff (RBAC)</li>
+          <li>Automatische Backups</li>
+          <li>DSGVO-konforme Datenhaltung</li>
+          <li>Beispiel: Kunden-Daten nur für befugte Teams</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Warum benötigt man das? -->
+    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+      <h4 class="font-semibold mb-2 text-gray-800">Warum Databricks?</h4>
+      <div class="grid grid-cols-2 gap-4 text-gray-700">
+        <div>
+          <p class="text-sm"><span class="font-medium">🚀 Geschwindigkeit:</span> Analysen in Minuten statt Tagen</p>
+          <p class="text-sm"><span class="font-medium">🤝 Teamwork:</span> Data Scientists + Entwickler zusammen</p>
+        </div>
+        <div>
+          <p class="text-sm"><span class="font-medium">📊 All-in-One:</span> Von Rohdaten bis zum Dashboard</p>
+          <p class="text-sm"><span class="font-medium">🔄 Zukunftssicher:</span> Skaliert mit Ihrem Business</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Praxisbeispiel -->
+    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+      <h4 class="font-semibold mb-2 text-gray-800">Praxisbeispiel: Energiekonzern</h4>
+      <p class="text-sm text-gray-600">
+        <span class="font-medium">Aufgabe:</span> Wartungsintervalle für Windräder optimieren<br>
+        <span class="font-medium">Lösung:</span> Sensordaten (10.000+/Minute) analysieren + Ausfallwahrscheinlichkeit vorhersagen<br>
+        <span class="font-medium">Ergebnis:</span> 30% weniger Wartungskosten
+      </p>
+    </div>
+  </div>
+</div>       
+     
+        
+     <!-- Azure Synapse Analytics Section -->
+<div x-data="{ isOpen: true }" class="bg-white rounded-lg shadow-sm mb-6 border border-gray-200" x-cloak>
+  <div class="flex items-center justify-between p-6 cursor-pointer"
+       @click="isOpen = !isOpen"
+       role="button"
+       aria-expanded="false"
+       aria-controls="synapse-content">
+    <div class="flex items-center">
+      <i class="fas fa-rocket text-orange-600 text-2xl mr-3"></i>
+      <h3 class="text-xl font-semibold text-gray-800">Azure Synapse Analytics</h3>
+    </div>
+    <i class="fas fa-chevron-down text-gray-600 transition-transform duration-300" 
+       :class="{ 'rotate-180': isOpen }"></i>
+  </div>
+  <div id="synapse-content" 
+       x-show="isOpen"
+       x-collapse
+       class="px-6 pb-6 pt-2 border-t border-gray-150">
+
+    <p class="text-gray-700 mb-4">
+      Synapse ist Ihr "Daten-Kontrollzentrum": Es kombiniert die Power eines Data Warehouses mit modernster Analyse-Tools – perfekt um aus Terabytes von Daten blitzschnell Erkenntnisse zu ziehen.
+    </p>
+
+    <!-- Hauptfeatures -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      
+      <!-- Massenparallelverarbeitung -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-blue-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">🚀 Turbo für Big Data</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Analysiert Millionen Datensätze in Sekunden</li>
+          <li>Automatische Skalierung bei Lastspitzen</li>
+          <li>Beispiel: Tägliche Verkaufsdaten von 500 Filialen</li>
+        </ul>
+      </div>
+
+      <!-- Columnstore -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-green-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">🗄️ Intelligente Speicherung</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Bis zu 10x kompakter als normale Datenbanken</li>
+          <li>Blitzschnelle Abfragen bei komplexen Analysen</li>
+          <li>Beispiel: Historische Daten seit 2010 immer verfügbar</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Integration + T-SQL -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      
+      <!-- Power BI -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-purple-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">📊 Live-Reporting</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Direkte Verbindung zu Power BI</li>
+          <li>Echtzeit-Dashboards für Teams</li>
+          <li>Beispiel: Tägliche Umsatz-KPIs für die Geschäftsführung</li>
+        </ul>
+      </div>
+
+      <!-- T-SQL -->
+      <div class="p-4 bg-white rounded-lg border-l-4 border-red-500 shadow-sm">
+        <h4 class="font-semibold mb-2 text-gray-800">🔧 Vertraute Tools</h4>
+        <ul class="list-disc pl-4 text-gray-600 text-sm">
+          <li>Funktioniert mit Standard-SQL</li>
+          <li>Kompatibel mit bestehenden Datenbank-Skripts</li>
+          <li>Beispiel: Migration lokaler SQL-Reports in die Cloud</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Warum benötigt man das? -->
+    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+      <h4 class="font-semibold mb-2 text-gray-800">Warum Synapse?</h4>
+      <div class="grid grid-cols-2 gap-4 text-gray-700">
+        <div>
+          <p class="text-sm"><span class="font-medium">💡 All-in-One:</span> Daten speichern + analysieren in einem Tool</p>
+          <p class="text-sm"><span class="font-medium">📅 Zukunftssicher:</span> Verarbeitet auch morgen noch Ihre Datenmengen</p>
+        </div>
+        <div>
+          <p class="text-sm"><span class="font-medium">👩💻 Einfachheit:</span> Keine Spezial-Skills nötig</p>
+          <p class="text-sm"><span class="font-medium">💸 Kostenkontrolle:</span> Bezahlen nur was Sie nutzen</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Praxisbeispiel -->
+    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+      <h4 class="font-semibold mb-2 text-gray-800">Praxisbeispiel: Logistikunternehmen</h4>
+      <p class="text-sm text-gray-600">
+        <span class="font-medium">Aufgabe:</span> Lieferzeiten in 15 Ländern optimieren<br>
+        <span class="font-medium">Lösung:</span> Analyse von 2,5 Mio. Sendungen/Tag + Wetterdaten<br>
+        <span class="font-medium">Ergebnis:</span> 22% schnellere Auslieferungen
+      </p>
+    </div>
+  </div>
+</div>   
+        
+        
+        
+        
+        
+        
+        
+ 
+        
+
+
+
+        
+ 
+  <!-- Storage Services Section -->
+<section class="mb-16">
+  <h2 class="text-2xl font-bold text-gray-800 mb-6">Speicherlösungen im Vergleich</h2>
+
+  <!-- Azure Blob Storage -->
+  <div x-data="{ isOpen: true }" class="bg-white rounded-lg shadow-md mb-6" x-cloak>
+    <div class="flex items-center justify-between p-6 cursor-pointer"
+         @click="isOpen = !isOpen"
+         role="button"
+         aria-controls="blob-content">
+      <div class="flex items-center">
+        <i class="fas fa-archive text-blue-500 text-2xl mr-3"></i>
+        <h3 class="text-xl font-semibold">Azure Blob Storage</h3>
+      </div>
+      <i class="fas fa-chevron-down transition-transform duration-300"
+         :class="{ 'rotate-180': isOpen }"></i>
+    </div>
+    <div id="blob-content" 
+         x-show="isOpen"
+         x-collapse
+         class="px-6 pb-6 pt-2 border-t border-gray-100">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <p class="text-gray-600 mb-4">
+            Der grundlegende Objektspeicher für unstrukturierte Daten. 
+            Ideal für Dateiablage, Backup-Lösungen und statische Webinhalte.
+          </p>
+          <div class="bg-purple-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Medienspeicherung (Bilder, Videos)</li>
+              <li>Logfile-Archivierung</li>
+              <li>Statische Website-Hosting</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="bg-green-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Kostengünstige Archivierung</li>
+              <li>Unbegrenzte Skalierung</li>
+              <li>Multi-Protocol Zugriff</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Kein hierarchischer Namespace</li>
+              <li>Nicht für Analytics optimiert</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Azure Data Lake Storage Gen2 -->
+  <div x-data="{ isOpen: true }" class="bg-white rounded-lg shadow-md mb-6" x-cloak>
+    <div class="flex items-center justify-between p-6 cursor-pointer"
+         @click="isOpen = !isOpen"
+         role="button"
+         aria-controls="datalake-content">
+      <div class="flex items-center">
+        <i class="fas fa-water text-blue-400 text-2xl mr-3"></i>
+        <h3 class="text-xl font-semibold">Azure Data Lake Storage Gen2</h3>
+      </div>
+      <i class="fas fa-chevron-down transition-transform duration-300"
+         :class="{ 'rotate-180': isOpen }"></i>
+    </div>
+    <div id="datalake-content" 
+         x-show="isOpen"
+         x-collapse
+         class="px-6 pb-6 pt-2 border-t border-gray-100">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <p class="text-gray-600 mb-4">
+            Kombiniert Blob Storage mit Data Lake-Funktionen. 
+            Industriestandard für moderne Analytics-Architekturen.
+          </p>
+          <div class="bg-purple-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Big Data Analytics</li>
+              <li>Machine Learning Pipelines</li>
+              <li>Data Science Projekte</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="bg-green-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Höchste Performance</li>
+              <li>POSIX-kompatible ACLs</li>
+              <li>Nahtlose Azure-Integration</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Komplexes Berechtigungsmanagement</li>
+              <li>Reine Azure-Lösung</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Microsoft OneLake -->
+  <div x-data="{ isOpen: true }" class="bg-white rounded-lg shadow-md mb-6" x-cloak>
+    <div class="flex items-center justify-between p-6 cursor-pointer"
+         @click="isOpen = !isOpen"
+         role="button"
+         aria-controls="onelake-content">
+      <div class="flex items-center">
+        <i class="fas fa-share-nodes text-teal-600 text-2xl mr-3"></i>
+        <h3 class="text-xl font-semibold">Microsoft OneLake</h3>
+      </div>
+      <i class="fas fa-chevron-down transition-transform duration-300"
+         :class="{ 'rotate-180': isOpen }"></i>
+    </div>
+    <div id="onelake-content" 
+         x-show="isOpen"
+         x-collapse
+         class="px-6 pb-6 pt-2 border-t border-gray-100">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <p class="text-gray-600 mb-4">
+            Der zentrale Data Lake für Microsoft Fabric. 
+            Bietet eine vereinheitlichte Datenebene über alle Fabric-Komponenten.
+          </p>
+          <div class="bg-purple-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-purple-700">Einsatzgebiete</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>End-to-End Fabric Lösungen</li>
+              <li>Unified Data Governance</li>
+              <li>Cross-Cloud Analytics</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="bg-green-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2 text-green-700">Vorteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>Automatische Fabric-Integration</li>
+              <li>Multi-Cloud Support</li>
+              <li>Einheitliche Governance</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2 text-red-700">Nachteile</h4>
+            <ul class="list-disc list-inside text-sm">
+              <li>An Fabric gebunden</li>
+              <li>Eingeschränkte Customization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Summary -->
+  <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+    <h3 class="text-xl font-semibold mb-4">Auswahlhilfe</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+      <div class="text-center p-4 border-r">
+        <i class="fas fa-archive text-blue-500 text-2xl mb-2"></i>
+        <p class="font-semibold">Blob Storage</p>
+        <p class="text-gray-600 mt-2">Wenn Sie einfache Objektspeicherung ohne Analytics-Anforderungen benötigen</p>
+      </div>
+      <div class="text-center p-4 border-r">
+        <i class="fas fa-water text-blue-400 text-2xl mb-2"></i>
+        <p class="font-semibold">Data Lake Gen2</p>
+        <p class="text-gray-600 mt-2">Für moderne Analytics-Workloads in der Azure-Cloud</p>
+      </div>
+      <div class="text-center p-4">
+        <i class="fas fa-share-nodes text-teal-600 text-2xl mb-2"></i>
+        <p class="font-semibold">OneLake</p>
+        <p class="text-gray-600 mt-2">Bei Nutzung von Microsoft Fabric mit Multi-Cloud-Ansatz</p>
+      </div>
+    </div>
+  </div>
+</section>      
+        
+
+<!-- Power BI Section -->
+<div x-data="{ isOpen: true }" class="bg-white rounded-lg shadow-md mb-6" x-cloak>
+  <div class="flex items-center justify-between p-6 cursor-pointer"
+       @click="isOpen = !isOpen"
+       role="button"
+       aria-expanded="false"
+       aria-controls="powerbi-content">
+    <div class="flex items-center">
+      <i class="fas fa-chart-pie text-red-500 text-2xl mr-3"></i>
+      <h3 class="text-xl font-semibold">Power BI</h3>
+    </div>
+    <i class="fas fa-chevron-down transition-transform duration-300" 
+       :class="{ 'rotate-180': isOpen }"></i>
+  </div>
+  
+  <div id="powerbi-content" 
+       x-show="isOpen"
+       x-collapse
+       class="px-6 pb-6 pt-2 border-t border-gray-100">
+    
+    <p class="text-gray-600 mb-4">
+      Die zentrale Analyseschaltzentrale für alle Fachbereiche. 
+      Kombiniert Datenvisualisierung mit Self-Service BI - perfekt 
+      für Entscheider und Datenexperten gleichermaßen.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <!-- Hauptfunktionen -->
+      <div class="bg-red-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-red-600">🚀 Kernfähigkeiten</h4>
+        <ul class="list-disc pl-4 text-sm">
+          <li>Interaktive Dashboards für Echtzeit-Einblicke</li>
+          <li>Drag & Drop Report-Designer</li>
+          <li>Natürlichsprachliche Abfragen (Q&A)</li>
+          <li>Mobile Apps für unterwegs</li>
+        </ul>
+      </div>
+
+      <!-- Integrationen -->
+      <div class="bg-purple-50 p-4 rounded-lg">
+        <h4 class="font-semibold mb-2 text-purple-600">🔗 Schlüsselintegrationen</h4>
+        <ul class="list-disc pl-4 text-sm">
+          <li>Direktanbindung an Azure Services</li>
+          <li>Live-Excel-Verbindungen</li>
+          <li>SharePoint Embedded Reports</li>
+          <li>Teams-Integration</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sicherheit & Governance -->
+    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+      <h4 class="font-semibold mb-2 text-blue-700">🔒 Sicherheitsfeatures</h4>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <p class="text-sm">🏷️ Row-Level Security</p>
+          <p class="text-sm">👥 Entra ID Integration</p>
+        </div>
+        <div>
+          <p class="text-sm">📜 Audit Logs</p>
+          <p class="text-sm">🌐 GDPR Compliance</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tipps -->
+    <div class="mt-4 bg-green-50 p-3 rounded-lg text-sm">
+      <i class="fas fa-lightbulb text-green-600 mr-2"></i>
+      <strong>Pro-Tipp:</strong> Nutzen Sie die "Publish to Web" Funktion 
+      für öffentliche Dashboards - ideal für KPI-Transparenz!
+    </div>
+  </div>
+</div>
+
+      <!-- Anwendungsfälle -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+          Praktische Anwendungsfälle
+        </h2>
+
+<!-- KMU-Beispiel -->
+<div class="bg-white rounded-lg shadow-md p-6 mb-6" data-aos="zoom-in">
+  <div class="flex items-center mb-4">
+    <i class="fas fa-store-alt text-purple-500 text-2xl mr-3"></i>
+    <h3 class="text-xl font-semibold">Mittelständischer Einzelhändler</h3>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">🛒 Herausforderung</h4>
+      <p class="text-sm">Optimierung der Filialbestände bei 15 Standorten</p>
+    </div>
+    <div class="bg-purple-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">📦 Lösungskette</h4>
+      <ul class="list-disc pl-4 text-sm">
+        <li>ADF: Automatisierte Warenwirtschaftsdaten</li>
+        <li>Databricks: Verkaufsprognosen pro Region</li>
+        <li>Power BI: Lagerampel-System für Filialleiter</li>
+      </ul>
+    </div>
+    <div class="bg-green-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">📊 Ergebnis</h4>
+      <p class="text-sm">25% weniger Überbestände + 98% Lieferfähigkeit</p>
+    </div>
+  </div>
+</div>
+
+<!-- Großunternehmen 1 -->
+<div class="bg-white rounded-lg shadow-md p-6 mb-6" data-aos="zoom-in">
+  <div class="flex items-center mb-4">
+    <i class="fas fa-ship text-blue-600 text-2xl mr-3"></i>
+    <h3 class="text-xl font-semibold">Schiffslogistik (Global Player)</h3>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">🌊 Herausforderung</h4>
+      <p class="text-sm">Kraftstoffoptimierung für 200 Frachtschiffe</p>
+    </div>
+    <div class="bg-purple-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">⛽ Lösungskette</h4>
+      <ul class="list-disc pl-4 text-sm">
+        <li>Data Lake: Schiffs-Sensordaten (10 TB/Tag)</li>
+        <li>Synapse: Routenanalysen mit Wetterdaten</li>
+        <li>Power BI: Flottenübersicht in Echtzeit</li>
+      </ul>
+    </div>
+    <div class="bg-green-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">🚢 Ergebnis</h4>
+      <p class="text-sm">12% weniger Treibstoffverbrauch pro Jahr</p>
+    </div>
+  </div>
+</div>
+
+<!-- Großunternehmen 2 -->
+<div class="bg-white rounded-lg shadow-md p-6 mb-6" data-aos="zoom-in">
+  <div class="flex items-center mb-4">
+    <i class="fas fa-microchip text-orange-500 text-2xl mr-3"></i>
+    <h3 class="text-xl font-semibold">Halbleiterproduktion</h3>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">🔬 Herausforderung</h4>
+      <p class="text-sm">Reduktion von Produktionsausschuss in 5 Werken</p>
+    </div>
+    <div class="bg-purple-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">🏭 Lösungskette</h4>
+      <ul class="list-disc pl-4 text-sm">
+        <li>ADF: Maschinendaten-Streaming (IoT)</li>
+        <li>Databricks: Qualitätsmustererkennung</li>
+        <li>Synapse: Cross-Werk Benchmarking</li>
+      </ul>
+    </div>
+    <div class="bg-green-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">📈 Ergebnis</h4>
+      <p class="text-sm">0,8% Ausschussreduktion → 8 Mio. € Einsparung/Jahr</p>
+    </div>
+  </div>
+</div>
+
+<!-- Öffentlicher Sektor -->
+<div class="bg-white rounded-lg shadow-md p-6" data-aos="zoom-in">
+  <div class="flex items-center mb-4">
+    <i class="fas fa-tree text-green-600 text-2xl mr-3"></i>
+    <h3 class="text-xl font-semibold">Städtisches Forstamt</h3>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">🌳 Herausforderung</h4>
+      <p class="text-sm">Optimierung der Waldpflege in 12.000 Hektar Stadtwald</p>
+    </div>
+    <div class="bg-purple-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">🛰️ Lösungskette</h4>
+      <ul class="list-disc pl-4 text-sm">
+        <li>Data Lake: Satellitenbilder + Drohnendaten</li>
+        <li>Databricks: Baumgesundheitsanalyse</li>
+        <li>Power BI: Forstpflege-Routenplanung</li>
+      </ul>
+    </div>
+    <div class="bg-green-50 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">🌲 Ergebnis</h4>
+      <p class="text-sm">20% effizientere Pflegeeinsätze</p>
+    </div>
+  </div>
+</div>
       </section>
 
       <!-- Fazit -->
